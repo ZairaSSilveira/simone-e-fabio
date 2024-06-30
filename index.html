@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cospav Pavimentações</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <style>
+        /* Seu CSS aqui */
+        /* Exemplo de estilos para o navbar e outras seções */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Quicksand", sans-serif;
+            font-size: 1.6rem;
+        }
+
+        .nav {
+            width: 100%;
+            height: 65px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navTrigger {
+            display: none;
+        }
+
+        .nav div.logo {
+            float: left;
+            padding-left: 3rem;
+        }
+
+        .nav div.logo a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 2.5rem;
+        }
+
+        .nav div.main_list {
+            height: 65px;
+            float: right;
+        }
+
+        .nav div.main_list ul {
+            width: 100%;
+            height: 65px;
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav div.main_list ul li {
+            height: 65px;
+            padding: 0;
+            padding-right: 3rem;
+        }
+
+        .nav div.main_list ul li a {
+            text-decoration: none;
+            color: #fff;
+            /* Cor original */
+            line-height: 65px;
+            font-size: 2.4rem;
+            transition: color 0.3s;
+            /* Transição suave da cor */
+        }
+
+        .nav div.main_list ul li a:hover {
+            color: #ccc;
+            /* Cor neutra desejada ao passar o mouse */
+        }
+
+        .navTrigger {
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
+            margin: auto;
+            position: absolute;
+            right: 30px;
+            top: 0;
+            bottom: 0;
+        }
+
+        .navTrigger i {
+            background-color: #fff;
+            border-radius: 2px;
+            content: '';
+            display: block;
+            width: 100%;
+            height: 4px;
+        }
+
+        .navTrigger i:nth-child(1) {
+            animation: inT 0.8s forwards;
+        }
+
+        .navTrigger i:nth-child(2) {
+            animation: inM 0.8s forwards;
+        }
+
+        .navTrigger i:nth-child(3) {
+            animation: inBtm 0.8s forwards;
+        }
+
+        .affix {
+            padding: 0;
+            background-color: #111;
+        }
+
+        .home {
+            width: 100%;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .container-servicos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .servico {
+            width: 30%;
+            /* Ajuste a largura conforme necessário */
+            display: inline-block;
+            margin-right: 2%;
+            /* Espaçamento entre os serviços */
+            vertical-align: top;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        .row {
+            margin-bottom: 30px;
+            /* Espaçamento entre as linhas de serviços */
+            text-align: center;
+        }
+
+        .servico img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .servico h3 {
+            margin-top: 10px;
+            font-size: 2rem;
+        }
+
+        .servico p {
+            font-size: 1.6rem;
+            color: #555;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .galeria img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #111;
+            color: #fff;
+        }
+
+        @media screen and (max-width: 768px) {
+            .servico {
+                width: 100%;
+                /* Em telas menores, ocupar toda a largura */
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="container">
+            <div class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+            <div class="main_list">
+                <ul>
+                    <li><a href="#quem-somos">Sobre nós</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#galeria">Galeria de Fotos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <div class="container">
+
+        </div>
+    </section>
+
+    <section id="quem-somos" class="section">
+        <div class="container">
+            <h2>Quem Somos</h2>
+            <p>Na Cospav Pavimentações, somos mais do que uma empresa de pavimentação; somos realizadores de sonhos e
+                construtores de futuros. Fundada com paixão e dedicação, a Cospave se dedica a oferecer soluções de
+                pavimentação de alta qualidade, com um compromisso inabalável com a excelência e a satisfação do
+                cliente. Nossa equipe é composta por profissionais qualificados e comprometidos em transformar cada
+                projeto em uma obra-prima, garantindo durabilidade e segurança em cada metro quadrado pavimentado.</p>
+            <h3>Nossa História</h3>
+            <p>A história da Cospav Pavimentações começa com o sonho de Fábio, um visionário que encontrou inspiração
+                no trabalho com um amigo do ramo de pavimentação. Com determinação e uma oportunidade nas mãos, Fábio
+                decidiu que era hora de trilhar seu próprio caminho. Ele começou a conquistar seus primeiros clientes,
+                movido pela vontade de prosperar e fazer a diferença. Ao lado de sua irmã, Fábio transformou esse sonho
+                em realidade, fundando a Cospav Pavimentações. Unidos pela mesma visão e valores, eles trabalharam
+                arduamente para estabelecer a empresa e oferecer serviços de pavimentação que não apenas atendem, mas
+                superam as expectativas dos clientes. Hoje, a Cospav está pronta para expandir seus horizontes e levar
+                suas soluções inovadoras para o mundo, sempre com a mesma paixão e comprometimento que marcaram o início
+                de sua jornada.</p>
+        </div>
+    </section>
+
+    <section id="servicos" class="section">
+        <div class="container">
+            <h2>Serviços</h2>
+            <div class="row">
+                <div class="servico">
+                    <img src="imagens/pavimentacao.jpg" alt="Pavimentação Asfáltica">
+                    <h3>Pavimentação Asfáltica</h3>
+                    <p>Execução de pavimentações asfálticas para vias públicas, estradas e estacionamentos.</p>
+                </div>
+                <div class="servico">
+                    <img src="imagens/escavacoes.jpg" alt="Escavações">
+                    <h3>Escavações</h3>
+                    <p>Serviços de escavação para obras de infraestrutura e preparação de terreno.</p>
+                </div>
+                <div class="servico">
+                    <img src="imagens/aterro.jpg" alt="Aterros">
+                    <h3>Aterros</h3>
+                    <p>Realização de aterros com técnicas modernas para garantir a estabilidade do solo.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="servico">
+                    <img src="imagens/drenagem.jpg" alt="Drenagens">
+                    <h3>Drenagens</h3>
+                    <p>Implementação de sistemas de drenagem eficientes para prevenção de inundações.</p>
+                </div>
+                <div class="servico">
+                    <img src="imagens/aguas-fluviais.jpg" alt="Galeria de Águas Pluviais">
+                    <h3>Galeria de Águas Pluviais</h3>
+                    <p>Construção de sistemas de drenagem para manejo de águas pluviais.</p>
+                </div>
+                <div class="servico">
+                    <img src="imagens/sarjetas.jpg" alt="Guias e Sarjetas">
+                    <h3>Guias e Sarjetas</h3>
+                    <p>Construção de guias e sarjetas que contribuem para a organização e segurança viária.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="servico">
+                    <img src="imagens/calçadas.jpg" alt="Construção de Calçadas">
+                    <h3>Construção de Calçadas</h3>
+                    <p>Desenvolvimento de calçadas seguras e acessíveis.</p>
+                </div>
+                <div class="servico">
+                    <img src="imagens/concreto-armado.jpg" alt="Pisos de Concreto Armado">
+                    <h3>Pisos de Concreto Armado</h3>
+                    <p>Instalação de pisos de concreto armado para diferentes aplicações.</p>
+                </div>
+                <div class="servico">
+                    <img src="imagens/frezagem.jpg" alt="Fresagem Asfáltica">
+                    <h3>Fresagem Asfáltica</h3>
+                    <p>Remoção de camadas asfálticas existentes utilizando técnicas de fresagem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="galeria" class="section">
+        <div class="container">
+            <h2>Galeria de Fotos</h2>
+            <div class="galeria">
+                <img src="F1.jpg" alt="Foto da Galeria 1">
+                <img src="F2.jpg" alt="Foto da Galeria 2">
+                <img src="F3.jpg" alt="Foto da Galeria 3">
+                <img src="F4.jpg" alt="Foto da Galeria 4">
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>Telefone: (11) 94818-8347</p>
+            <p>E-mail: <a href="mailto:cospavimentacoes@gmail.com">cospavimentacoes@gmail.com</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 COSPAV - Pavimentação</p>
+        </div>
+    </footer>
+</body>
+
+</html>
